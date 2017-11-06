@@ -10,11 +10,10 @@ const axios = require('axios');
 /**
  * Greenhouse promise request.
  * @param apiToken string.
+ * @param queryParams object.
  */
-const getJobs = apiToken => axios.get('https://harvest.greenhouse.io/v1/job_posts', {
-	params: {
-		live: true
-	},
+const getJobs = (apiToken, queryParams = { live: true }) => axios.get('https://harvest.greenhouse.io/v1/job_posts', {
+	params: queryParams,
 	auth: {
 		username: apiToken,
 		password: ''
@@ -34,11 +33,11 @@ const changeId = obj => {
 };
 
 exports.sourceNodes = (() => {
-	var _ref = _asyncToGenerator(function* ({ boundActionCreators }, { apiToken }) {
+	var _ref = _asyncToGenerator(function* ({ boundActionCreators }, { apiToken, queryParams }) {
 		const createNode = boundActionCreators.createNode;
 
 
-		const result = yield getJobs(apiToken);
+		const result = yield getJobs(apiToken, queryParams);
 		const jobs = result.data;
 
 		jobs.forEach(function (job) {
