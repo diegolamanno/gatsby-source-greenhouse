@@ -1,0 +1,23 @@
+{
+	"name": "gatsby-source-greenhouse",
+	"version": "",
+	"description": "Gatsby source plugin for loading job openings from greenhouse.io",
+	"main": "gatsby-node.js",
+	"scripts": {
+		"build": "babel src --out-dir . --ignore apiTest.js"
+	},
+	"keywords": [
+		"gatsby",
+		"gatsby-plugin",
+		"gatsby-source-plugin"
+	],
+	"author": "Diego La Manno <diegom@ecobee.com>",
+	"dependencies": {
+		"axios": "^0.16.2"
+	},
+	"devDependencies": {
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-env": "^1.6.0",
+		"babel-cli": "^6.26.0"
+	}
+}
