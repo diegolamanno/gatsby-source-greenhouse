@@ -9,7 +9,7 @@ npm install gatsby-source-greenhouse
 
 ## Usage
 
-To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Devn Center > API Credential Management > Create New API Key`. Make sure it is type **Hasvest**.
+To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Devn Center > API Credential Management > Create New API Key`. Make sure it is type **Harvest**.
 
 Next, edit `gatsby-config.js` to use the plugin:
 ```
