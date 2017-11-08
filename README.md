@@ -6,6 +6,10 @@
 ```bash
 npm install gatsby-source-greenhouse
 ```
+or
+```bash
+yarn add gatsby-source-greenhouse
+```
 
 ## Usage
 
