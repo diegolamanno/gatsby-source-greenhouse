@@ -13,6 +13,10 @@
     "bugs": {
       "url": "https://github.com/diegolamanno/gatsby-source-greenhouse/issues"
     },
+    "contributors": [
+      "Cam Sloan <cameron@sloan.ca>",
+      "Sandra Robotos <sandrar@ecobee.com>"
+    ],
     "homepage": "https://github.com/diegolamanno/gatsby-source-greenhouse",
     "keywords": [
       "gatsby",
