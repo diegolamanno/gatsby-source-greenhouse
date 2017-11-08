@@ -13,7 +13,7 @@ yarn add gatsby-source-greenhouse
 
 ## Usage
 
-To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Devn Center > API Credential Management > Create New API Key`. Make sure it is type **Hasvest**.
+To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Dev Center > API Credential Management > Create New API Key`. Make sure it is type **Harvest**.
 
 Next, edit `gatsby-config.js` to use the plugin:
 ```
@@ -31,7 +31,7 @@ Next, edit `gatsby-config.js` to use the plugin:
 }
 ```
 
-By default, `gatsby-source-greenhouse` will only retrieve job openings that are marked as  *live*. To change this behavior, you can also supply an optional `queryParams` parameter inside of `options`. Possible values are detailed in the on [Greenhouse's API Documentation](https://developers.greenhouse.io/harvest.html?shell#job-posts).
+By default, `gatsby-source-greenhouse` will only retrieve job openings that are marked as  *live*. To change this behavior, you can also supply an optional `queryParams` parameter inside of `options`. Possible values are detailed in [Greenhouse's API Documentation](https://developers.greenhouse.io/harvest.html?shell#job-posts).
 
 ## Querying
 
