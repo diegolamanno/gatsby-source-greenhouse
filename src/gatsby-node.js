@@ -8,16 +8,16 @@ import { JobPostNode, DepartmentNode } from './nodes'
  * @param departmentId string.
  */
 async function getJobsForDepartment(apiToken, departmentId) {
-	return axios.get('https://harvest.greenhouse.io/v1/jobs', {
-		params: {
-			department_id: departmentId,
-			status: 'open'
-		},
-		auth: {
-			username: apiToken,
-			password: '',
-		},
-	})
+  return axios.get('https://harvest.greenhouse.io/v1/jobs', {
+    params: {
+      department_id: departmentId,
+      status: 'open'
+    },
+    auth: {
+      username: apiToken,
+      password: '',
+    },
+  })
 }
 
 /**
@@ -26,13 +26,13 @@ async function getJobsForDepartment(apiToken, departmentId) {
  * @param queryParams object, defaults to only live job posts
  */
 async function getJobPosts(apiToken, queryParams) {
-	return axios.get('https://harvest.greenhouse.io/v1/job_posts', {
-		params: queryParams,
-		auth: {
-			username: apiToken,
-			password: '',
-		},
-	})
+  return axios.get('https://harvest.greenhouse.io/v1/job_posts', {
+    params: queryParams,
+    auth: {
+      username: apiToken,
+      password: '',
+    },
+  })
 }
 
 /**
@@ -40,12 +40,12 @@ async function getJobPosts(apiToken, queryParams) {
  * @param apiToken string.
  */
 async function getDepartments(apiToken) {
-	return axios.get('https://harvest.greenhouse.io/v1/departments', {
-		auth: {
-			username: apiToken,
-			password: '',
-		}
-	})
+  return axios.get('https://harvest.greenhouse.io/v1/departments', {
+    auth: {
+      username: apiToken,
+      password: '',
+    }
+  })
 }
 
 /**
