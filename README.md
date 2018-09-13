@@ -18,32 +18,51 @@ To use this source you need to supply a Greenhouse API token. You can create a G
 Next, edit `gatsby-config.js` to use the plugin:
 ```
 {
-    ...
-    plugins: [
+  ...
+  plugins: [
     ...
     {
-      resolve: 'gatsby-source-greenhouse',
+      resolve: `gatsby-source-greenhouse`,
       options: {
-        apiToken: '{API_TOKEN}',
+        apiToken: `{API_TOKEN}`,
+        jobPosts: {
+          live: true
+        }
       },
     },
   ]
 }
 ```
 
-By default, `gatsby-source-greenhouse` will only retrieve job openings that are marked as  *live*. To change this behavior, you can also supply an optional `queryParams` parameter inside of `options`. Possible values are detailed in [Greenhouse's API Documentation](https://developers.greenhouse.io/harvest.html?shell#job-posts).
+By default, `gatsby-source-greenhouse` will only retrieve job openings that are marked as *live*. You can change this by passing in `false` in the `jobPosts` plugin option parameter.
 
 ## Querying
 
-You can query the nodes created by the plugin as follows:
+You can query the all `JobPost` created by the plugin as follows:
 ```graphql
 {
-    allGreenhouseJob {
+    allGreenhouseJobPost {
         edges {
             node {
                 ...
             }
         }
     }
+}
+```
+
+You can also query all `JobPost` broken out for each department:
+```graphql
+{
+  allGreenhouseDepartment {
+    edges {
+      node {
+        name
+        childrenGreenhouseJobPost {
+          title
+        }
+      }
+    }
+  }
 }
 ```
