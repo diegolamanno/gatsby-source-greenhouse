@@ -61,4 +61,6 @@ typings/
 .idea/
 .idea
 
-*.js
+/*.js
+yarn.lock
+.DS_STORE
