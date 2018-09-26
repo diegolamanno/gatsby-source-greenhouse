@@ -61,6 +61,9 @@ typings/
 .idea/
 .idea
 
+#VSCode
+.vscode/*
+
 /*.js
 yarn.lock
 .DS_STORE
