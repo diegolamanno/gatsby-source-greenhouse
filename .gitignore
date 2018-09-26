@@ -62,6 +62,5 @@ typings/
 .idea
 
 /*.js
-!index.js
 yarn.lock
 .DS_STORE
