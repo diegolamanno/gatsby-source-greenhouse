@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-greenhouse",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Gatsby source plugin for loading job posts from greenhouse.io",
   "main": "gatsby-node.js",
   "scripts": {
@@ -29,12 +29,12 @@
   "author": "Diego La Manno <diegolamanno@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "gatsby-node-helpers": "^0.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "gatsby-node-helpers": "^0.3.0"
+    "babel-preset-env": "^1.6.0"
   }
 }
