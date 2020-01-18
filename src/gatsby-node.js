@@ -99,14 +99,20 @@ exports.sourceNodes = async ({ boundActionCreators }, { apiToken, pluginOptions 
       }
 
       var jobPostsMapping = jobPosts.reduce((map, jobPost) => { 
-        map[jobPost.job_id] = jobPost
+        if(map[jobPost.job_id]){
+          map[jobPost.job_id].push(jobPost)
+        } else {
+          map[jobPost.job_id] = [jobPost]
+        }
+
         return map
       }, {})
+
 
       var jobPostsForDepartment = jobs.reduce((arr, job) => {
         const mappedJobPost = jobPostsMapping[job.id]
         if (mappedJobPost) {
-          arr.push(mappedJobPost)
+          arr.push(...mappedJobPost)
         }
         return arr
       }, [])
