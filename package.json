@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-greenhouse",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Gatsby source plugin for loading job posts from greenhouse.io",
   "main": "gatsby-node.js",
   "scripts": {
@@ -16,7 +16,8 @@
   "contributors": [
     "Cam Sloan <cameron@sloan.ca>",
     "Sandra Robotos <sandrar@ecobee.com>",
-    "Bay Phillips <bay.phillips@plated.com>"
+    "Bay Phillips <bay.phillips@plated.com>",
+    "Joe Alfaro <joe.alfaro@anchorage.com>"
   ],
   "homepage": "https://github.com/diegolamanno/gatsby-source-greenhouse",
   "keywords": [
