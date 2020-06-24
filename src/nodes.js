@@ -3,7 +3,6 @@ import createNodeHelpers from 'gatsby-node-helpers'
 const {
   createNodeFactory,
   generateNodeId,
-  generateTypeName,
 } = createNodeHelpers({
   typePrefix: `Greenhouse`,
 })
