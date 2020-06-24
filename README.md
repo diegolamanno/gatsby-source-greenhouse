@@ -22,6 +22,12 @@ yarn add gatsby-source-greenhouse
 
 To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Dev Center > API Credential Management > Create New API Key`. Make sure it is type **Harvest**.
 
+API keys need to be authorized to access specific endpoints. Go to `API Credential Management > Manage Permissions` and make sure your key is authorized for the following endpoints:
+
+* Jobs
+* Job Posts
+* Departments
+
 Next, edit `gatsby-config.js` to use the plugin:
 
 ```
