@@ -4,7 +4,9 @@
   "description": "Gatsby source plugin for loading job posts from greenhouse.io",
   "main": "gatsby-node.js",
   "scripts": {
-    "build": "babel src --out-dir . --ignore apiTest.js"
+    "build": "babel src --out-dir . --ignore apiTest.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,12 +32,14 @@
   "author": "Diego La Manno <diegolamanno@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.16.2",
-    "gatsby-node-helpers": "^0.3.0"
+    "axios": "^0.18.1",
+    "gatsby-node-helpers": "^0.3.0",
+    "snyk": "^1.349.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0"
-  }
+  },
+  "snyk": true
 }
