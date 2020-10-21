@@ -60,12 +60,6 @@ const changeId = (obj, property = "id") => {
 	return updatedObj
 }
 
-const defaultPluginOptions = {
-  jobPosts: {
-    live: true
-  }
-}
-
 /**
  * Return all open jobs for a given department
  * @param jobs array of jobs or empty array.
@@ -113,9 +107,8 @@ function flattenJobPosts(jobs, jobPosts) {
   return flattenedJobPosts.filter((jobPost) => jobPost !== undefined)
 }
 
-exports.sourceNodes = async ({ boundActionCreators }, { apiToken, pluginOptions }) => {
+exports.sourceNodes = async ({ boundActionCreators }, { apiToken, jobPosts: jobPostParameters }) => {
 	const { createNode } = boundActionCreators
-  const options = pluginOptions || defaultPluginOptions
 
   console.log(`Fetch Greenhouse data`)
 
@@ -124,8 +117,13 @@ exports.sourceNodes = async ({ boundActionCreators }, { apiToken, pluginOptions 
   let departments, jobPosts
   try {
     departments = await getDepartments(apiToken).then(response => response.data)
-    jobPosts = await getJobPosts(apiToken, options.jobPosts).then(response => response.data)
-    
+    jobPosts = await getJobPosts(
+      apiToken,
+      jobPostParameters || {
+        live: true,
+      }
+    ).then((response) => response.data);
+
   } catch (e) {
     console.log(`Failed to fetch data from Greenhouse`)
     process.exit(1)
@@ -141,7 +139,7 @@ exports.sourceNodes = async ({ boundActionCreators }, { apiToken, pluginOptions 
   return Promise.all(
     departments.map(async department => {
       const convertedDepartment = changeId(department)
-      
+
       let jobs
       try {
         const jobsForDepartmentResults = await getJobsForDepartment(apiToken, convertedDepartment.id)
@@ -156,12 +154,12 @@ exports.sourceNodes = async ({ boundActionCreators }, { apiToken, pluginOptions 
       const departmentNode = DepartmentNode(changeId(convertedDepartment))
 
       convertedDepartment.jobPosts.forEach(jobPost => {
-        const jobPostNode = JobPostNode(jobPost, { 
-          parent: departmentNode.id 
+        const jobPostNode = JobPostNode(jobPost, {
+          parent: departmentNode.id
         })
         createNode(jobPostNode)
       })
-      
+
       createNode(departmentNode)
     })
   )
