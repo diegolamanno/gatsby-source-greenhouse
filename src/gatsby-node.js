@@ -113,8 +113,8 @@ function flattenJobPosts(jobs, jobPosts) {
   return flattenedJobPosts.filter((jobPost) => jobPost !== undefined)
 }
 
-exports.sourceNodes = async ({ boundActionCreators }, { apiToken, pluginOptions }) => {
-	const { createNode } = boundActionCreators
+exports.sourceNodes = async ({ actions }, { apiToken, pluginOptions }) => {
+	const { createNode } = actions
   const options = pluginOptions || defaultPluginOptions
 
   console.log(`Fetch Greenhouse data`)
