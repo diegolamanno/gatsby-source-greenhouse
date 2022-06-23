@@ -34,7 +34,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "gatsby-node-helpers": "^0.3.0",
-    "snyk": "^1.349.0"
+    "snyk": "^1.680.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
