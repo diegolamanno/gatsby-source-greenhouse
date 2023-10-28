@@ -32,7 +32,7 @@
   "author": "Diego La Manno <diegolamanno@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^1.6.0",
     "gatsby-node-helpers": "^0.3.0",
     "snyk": "^1.349.0"
   },
