@@ -33,7 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
-    "gatsby-node-helpers": "^0.3.0",
+    "gatsby-node-helpers": "^1.0.0",
     "snyk": "^1.349.0"
   },
   "devDependencies": {
